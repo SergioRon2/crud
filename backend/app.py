@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify
+from flask import Flask 
+from flask import request, jsonify
 from flask_cors import CORS
 import pymysql
 
@@ -34,7 +35,7 @@ def consulta_general():
         return jsonify({'Mensaje' : 'Error'})
 
 
-@app.route('/consulta_individual/<codigo>', methods='GET')
+@app.route('/consulta_individual/<codigo>', methods=['GET'])
 def consulta_individual(codigo):
     try:
         conn = conectar('localhost', 'root', '1234', 'gestor_contrasena')
@@ -52,7 +53,7 @@ def consulta_individual(codigo):
     except Exception as ex:
         return jsonify({'Mensaje' : 'Error'})
     
-@app.route('/registro/', methods='POST')
+@app.route('/registro/', methods=['POST'])
 def registro():
     try:
         conn = conectar('localhost', 'root', '1234', 'gestor_contrasena')
@@ -66,7 +67,7 @@ def registro():
         print(ex)
         return jsonify({'mensaje' : 'Error'})
 
-@app.route('/eliminar/<codigo>', methods='DELETE')
+@app.route('/eliminar/<codigo>', methods=['DELETE'])
 def eliminar(codigo):
     try:
         conn = conectar('localhost', 'root', '1234', 'gestor_contrasena')
@@ -80,7 +81,7 @@ def eliminar(codigo):
         print(ex)
         return jsonify({'Mensaje' : 'Error'})
 
-@app.route('/actualizar/<codigo>', methods='PUT')
+@app.route('/actualizar/<codigo>', methods=['PUT'])
 def actualizar(codigo):
     try:
         conn = conectar('localhost', 'root', '1234', 'gestor_contrasena')

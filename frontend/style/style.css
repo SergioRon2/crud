@@ -14,11 +14,13 @@ body{
 }
 
 #marco{
-    border: 1px solid #222;
     background-color: #fff;
 }
 
-.table{
-    
+.tarjeta{
+    font-size: 20px;
+}
 
+.form-group{
+    padding: 15px;
 }

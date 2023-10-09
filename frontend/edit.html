@@ -12,7 +12,7 @@
 </head>
 <body>
     <nav class="navbar bg-danger text-white">
-        <h5 class="mx-3 p-2">Gestor de contraseñas - Agregar</h5>
+        <h5 class="mx-3 p-2">Gestor de contraseñas - Editar</h5>
     </nav>
     <div id="main" class="container">
         <div class="container my-5 p-4 text-center" id="marco">
@@ -29,11 +29,21 @@
                 <input type="password" class="form-control" name="clave" id="clave" placeholder="Clave">
             </div>
             <div class="tarjeta">
-                <button type="button" class="btn btn-danger" onclick="registrar()">
+                <button type="button" class="btn btn-danger" onclick="modificar(variable1)">
                 <i class="fas fa-save"></i></button>
                 <button type="button" class="btn btn-danger" onclick="location.href = 'index.html'"><i class="fas fa-home"></i></button>
             </div>
         </div>
     </div>
+    <script>
+        function getParameterByName(name){
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            let regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        let variable1 = getParameterByName('variable1');
+        consulta_individual(variable1)
+    </script>
 </body>
 </html>
