@@ -19,7 +19,7 @@ def consulta_general():
         conn = conectar('localhost', 'root', '1234', 'gestor_contrasena')
         cur = conn.cursor()
         cur.execute(""" SELECT * FROM baul """)
-        datos.fetcha11()
+        datos =cur.fetcha11()
         data=[]
 
         for row in datos:
